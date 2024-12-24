@@ -252,7 +252,7 @@ button.gift a {
     opacity: 1;
     pointer-events: all;
     display: block;
-    background: url('https://raw.githubusercontent.com/LnDataTech/data-xmas-quiz/refs/heads/main/assets/bg_c.png');
+    background: url('https://lndatatech.github.io/data-xmas-quiz/assets/bg_c.png');
     background-size: cover;
     background-position: center;
 }
@@ -729,7 +729,7 @@ input[type="range"]:focus::-moz-range-thumb {
 
     body {
         background-color: #f3efea;
-        background:url('https://lndatatech.github.io/data-xmas-quiz/assets/bg_c.png');
+        background:url('https://lndatatech.github.io/data-xmas-quiz/assets/bg.png');
         background-size:cover;
         background-position: center;
         background-repeat:space;
