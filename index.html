@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="theme-color" content="#34b7af" />
+    <meta name="description" content="線上心理測驗，找出最能代表你的聖誕數據角色。這天，聖誕的力量悄悄到來..." />
+    <meta name="author" content="LnData 麟數據科技" />
+    <meta name="keywords" content="心理測驗, 線上心理測驗, 聖誕, 數據 測驗 />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="聖誕數據之旅：測測你的聖誕數據角色" />
+    <meta property="og:url" content="https://food-personality.vercel.app/" />
+    <meta property="og:site_name" content="聖誕數據之旅：測測你的聖誕數據角色" />
+    <meta property="og:description" content="線上心理測驗，找出最能代表你的食物。這天，聖誕的力量悄悄到來...趕快玩玩看！" />
+    <meta property="og:locale" content="zh-TW" />
+    <meta property="article:author" content="LnData 麟數據科技" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#555555">
+    <meta name="msapplication-TileColor" content="#e2e2dd">
+    <title>聖誕數據之旅：測測你的聖誕數據角色</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+</head>
+
+<body>
+    <main>
+        <canvas id="snowfall-canvas"></canvas>
+        <section id="start">
+            <div class="title"><h1 style="visibility:hidden;">數據聖誕奇幻之旅</h1></div>
+            <h2 style="visibility:hidden;">測測你的<br class="mobile">數據聖誕角色!</h2>
+            <button class="startbtn" onclick="start()">開始旅程</button>
+            <footer>
+                <span><a href="#">LnData 麟數據科技</a>．聖誕出品</span>
+            </footer>
+        </section>
+        <section id="today"><h2>這天，<br>聖誕的力量悄悄到來<span class="ahhhh">.</span></h2></section>
+        <section id="test">
+            <div class="items">
+                <button class="arrow" onclick="backward()" id="left">❮</button>
+                <div id="whatIsYourName">
+                    <h4>你叫什麼名字？</h4><input type="text" id="name" placeholder="可輸入1~12半形格" maxlength="10"><button onclick="end()"
+                        id="send">查看結果</button>
+                </div>
+                <span class="title">
+                    <h2>聖誕數據心理測驗</h2>
+                </span>
+                <article class="current">3</article>
+                <button class="arrow" onclick="foward()">❯</button>
+            </div>
+        </section>
+        <section id="result">
+        </section>
+    </main>
+    <script src="main.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,772 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body {
+    overflow-x: hidden;
+}
+body {
+    min-height: 100svh;
+    font-family: "Noto Sans JP", Helvetica, Arial, serif;
+    background-color: #f3efea;
+    background:url("./assets/bg_h.png");
+    background-size:contain;
+    background-position: center;
+}
+
+#snowfall-canvas,
+.snowflakes {
+    position: absolute; /*  設定 .snowflakes 為絕對定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /*  隱藏超出容器的雪花 */
+    z-index: 10; /*  確保雪花在背景圖層上方 */
+    pointer-events: none; /*  讓雪花不會影響滑鼠事件 */
+  }
+  
+  .snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall 10s linear infinite; /*  套用 snowfall 動畫 */
+  }
+  
+  @keyframes snowfall {
+    0% {
+      transform: translate(0, -10%);
+    }
+    100% {
+      transform: translate(50%, 100%);
+    }
+  }
+
+.wrap {
+    background:url("./assets/bg_h.png");
+    background-size: cover;
+    max-height: 100%;
+    z-index: 12;
+}
+
+.wrap h2 {
+    font-size: 24px;
+    margin: 1rem 1.5rem !important;
+}
+
+.wrap hr {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+section {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: opacity 1s;
+}
+
+.items {
+    display: flex;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.items div {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 20%;
+    flex-direction: column;
+    font-size: 1.5em;
+    scroll-snap-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+
+.items div button.selected {
+    background: #b04147;
+    color: #fff;
+}
+
+#test .arrow {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translate(-50%, -50%);
+    outline: transparent;
+    border: none;
+    background: transparent;
+    font-size: 3em;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+#test .arrow:last-child {
+    left: unset;
+    right: 1em;
+}
+
+#test .arrow:last-child:hover {
+    transform: translate(-20%, -50%);
+}
+
+#test .arrow:first-child:hover {
+    transform: translate(-80%, -50%);
+}
+
+#test,
+#today {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#start button {
+    padding: .4em 2em;
+    border: none;
+    outline: none;
+    background: #fffef971;
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-radius: 1em;
+    box-shadow: 0 0 12px #00000030;
+    display: block;
+    color: #b04147;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Noto Sans JP", Helvetica, Arial, serif;
+    max-width: 100%;
+}
+
+.items div button,
+input[type="text"],
+#download-button {
+    padding: .4em 2em;
+    border: none;
+    outline: none;
+    background: #fffef971;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    margin-top: 1em;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1em;
+    box-shadow: 0 0 10px #00000023;
+    display: block;
+    color: #b04147;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Noto Sans JP", Helvetica, Arial, serif;
+    max-width: 100%;
+}
+
+button.gift {
+    padding: .4em 2em;
+    border: none;
+    outline: none;
+    background:#4caf50;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 1em auto !important;
+    transition: all 0.5s ease-in-out;
+    border-radius: 1em;
+    box-shadow: 0 0 10px #00000023;
+    display: block;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Noto Sans JP", Helvetica, Arial, serif;
+    width: 90%;
+    max-width: 600px !important;
+}
+
+button.gift a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#start button:hover {
+    transform: scale(120%);
+    color: #fefefe;
+    background-color: #4caf50;
+}
+
+.items div button:hover,
+#download-button:hover {
+    transform: translateY(3px);
+    background-color: #ffffffb8;
+}
+
+#start .title {
+    position: relative;
+}
+
+
+
+#start .title img {
+    width: 20em;
+}
+
+#start img {
+    width: 23em;
+}
+
+.too+section#today,
+.started~section#test {
+    opacity: 1;
+    pointer-events: all;
+    display: block;
+    background: url("./assets/bg_c.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.started,
+.too {
+    opacity: 0;
+    pointer-events: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 2em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+footer a,
+#download-text {
+    color: #535353;
+    transition: all 0.6s ease-in;
+}
+
+footer {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+footer a:hover {
+    color: #34b7af;
+}
+
+a.credit {
+    font-size: 12px;
+    margin-top: 2em;
+    border-top: #00000023 solid 1px;
+    width: 100%;
+    text-align: center;
+    color: #535353;
+    text-decoration: none;
+    display: block;
+}
+
+#download-text {
+    font-size: 2rem;
+}
+
+#download-text.small {
+    font-size: 1rem;
+}
+
+#download-text {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.mobile {
+    display: none;
+}
+
+.items .title  {
+    position: absolute;
+    z-index: 11;
+    background-color: #449557;
+    height: 4.5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: .5rem;
+}
+.current{
+    position: fixed;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    height: unset;
+}
+.items .title h2 {
+    font-size: 1.6rem;
+    color: #b04147;
+    width: 80%;
+    height: 1rem;
+    margin:1rem auto;
+}
+
+.items .title img {
+    height: 2rem;
+}
+
+.items h4 {
+    text-align: center;
+    max-width: 600px;
+}
+
+
+#test .arrow[disabled=""] {
+    color: #00000023;
+    cursor: not-allowed;
+}
+
+#result {
+    display: none; /*  初始狀態為隱藏 */
+    flex-direction: column; /*  垂直排列 */
+    align-items: center; /*  水平置中 */
+    justify-content: center; /*  垂直置中 */
+}
+
+.loading {
+    animation: shine 1s infinite alternate;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+@keyframes shine {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+#image {
+    max-height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 1rem;
+    background-size: cover;
+    display: none;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 1.5em;
+    color: #fefefe;
+}
+
+#feedback {
+    border: none;
+    outline: transparent;
+    background: transparent;
+    font-family: "Noto Sans JP", Helvetica, Arial, serif;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#feedback:hover {
+    text-decoration: underline;
+}
+
+#output {
+    display: block;
+    margin: .8em 0 .5em;
+}
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 25rem;
+    display: block;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #404040;
+    height: 0.25rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -12px;
+    /* Centers thumb on the track */
+    height: 2rem;
+    width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid #404040;
+    outline: 3px solid #404040;
+    outline-offset: 0.125rem;
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #404040;
+    height: 0.25rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    /*Removes extra border that FF applies*/
+    border-radius: 0;
+    /*Removes default border-radius that FF applies*/
+
+    /*custom styles*/
+    background-color: #000000;
+    height: 2rem;
+    width: .25rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    outline: 3px solid #404040;
+    outline-offset: 0.125rem;
+}
+
+#today {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.too+section#today {
+    display: flex;
+}
+
+.items>div button:last-child {
+    margin-top: 1em;
+}
+
+/*  警語樣式 */
+.disclaimer {
+    font-size: 0.8em;
+    text-align: center;
+    color: #777;
+    margin: 10px 10%;
+}
+
+/*  按鈕樣式 */
+.buttons {
+    margin: 10px 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons button {
+    margin: 0 8px;
+    padding: 6px 12px;
+    font-size: 1em;
+    max-width: 130px;
+    cursor: pointer;
+    transition: all 0.2s ease-in !important;
+}
+
+.buttons button:hover {
+    background-color: #535353;
+    color: #fff;
+    transition: all 0.2s ease-in;
+}
+
+/*  關於我們區塊樣式 */
+.about-us {
+    margin: 20px 10%;
+    text-align: center;
+}
+
+.lndatalogo {
+    width: 30%;
+    max-width: 160px;
+    min-width: 96px;
+    margin: 1rem auto;
+}
+
+.about-us p,
+.buttons p {
+    font-size: 12px;
+    text-align: left;
+    color: #3e3a39;
+    transition: all 0.5s ease-in;
+}
+
+.about-us h4,
+.about-us a,
+.recommended-reading a {
+    font-size: 14px;
+    color: #3e3a39;
+    transition: all 0.5s ease-in;
+}
+
+.about-us a:hover,
+.recommended-reading a:hover {
+    color: #34b7af;
+    transition: all 0.5s ease-in;
+}
+
+/*  推薦閱讀區塊樣式 */
+.recommended-reading {
+    margin: 20px 10%;
+    padding-bottom: 40px;
+}
+
+.recommended-reading ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recommended-reading li {
+    margin-bottom: 10px;
+}
+
+/*  社群分享彈出視窗樣式 */
+.modal {
+    display: none; /*  預設隱藏 */
+    position: fixed; /*  固定位置 */
+    z-index: 1; /*  置於頂層 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /*  啟用滾動條 */
+    background-color: rgba(0, 0, 0, 0.4); /*  半透明黑色背景 */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    box-shadow:0 0 18px #00000085;
+    margin: 15% auto; /*  上下置中 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-content button {
+    margin: 1rem 0 !important;
+    font-size: 0.8em;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    transform: translateY(-15%);
+}
+
+.close-button:hover {
+    color: #404040;
+}
+
+.social-share-button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.social-share-button:hover {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #ea0404;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+/*  icon 樣式 */
+.buttons i, .social-share-button i {
+    margin-right: 5px; /*  調整 icon 和文字的間距 */
+}
+
+
+@keyframes rotateLeft {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes rotateRight {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes hue-rotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(2);
+    }
+}
+
+@keyframes horizontal {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw - 100%));
+    }
+}
+
+@keyframes vertical {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(100vh - 100%));
+    }
+}
+
+@media (max-aspect-ratio: 4/3) {
+    .arrow {
+        display: none;
+    }
+    .mobile {
+        display:inline;
+    }
+
+    body {
+        background-color: #f3efea;
+        background:url("./assets/bg.png");
+        background-size:cover;
+        background-position: center;
+        background-repeat:space;
+    }
+    
+    .wrap {
+        background:url("./assets/bg.png");
+        background-size: cover;
+        max-height: 100%;
+        width: 100%;
+        background-repeat: space;
+    }
+
+    .items div button,
+    input[type="text"],
+    #download-button {
+        padding: .6em 2em;
+        font-size: 0.8rem;
+    }
+    #start button {
+        padding: .6em 2em;
+        font-size: 1.2rem;
+    }
+
+    .items div{
+        font-size: 1.3em;
+    }
+
+    .current{
+        font-size: 0.8rem;
+    }
+}
+
+/* @media height less than 500px */
+
+@media (max-height: 500px) {
+    body{
+        font-size: 0.5rem;
+    }
+}
