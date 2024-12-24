@@ -12,7 +12,7 @@ body {
     min-height: 100svh;
     font-family: "Noto Sans JP", Helvetica, Arial, serif;
     background-color: #f3efea;
-    background:url("./assets/bg_h.png");
+    background:url(https://raw.githubusercontent.com/LnDataTech/data-xmas-quiz/refs/heads/main/assets/bg_h.png);
     background-size:contain;
     background-position: center;
 }
@@ -49,7 +49,7 @@ body {
   }
 
 .wrap {
-    background:url("./assets/bg_h.png");
+    background:url(https://raw.githubusercontent.com/LnDataTech/data-xmas-quiz/refs/heads/main/assets/bg_h.png);
     background-size: cover;
     max-height: 100%;
     z-index: 12;
@@ -252,7 +252,7 @@ button.gift a {
     opacity: 1;
     pointer-events: all;
     display: block;
-    background: url("./assets/bg_c.png");
+    background: url(https://raw.githubusercontent.com/LnDataTech/data-xmas-quiz/refs/heads/main/assets/bg_c.png);
     background-size: cover;
     background-position: center;
 }
@@ -729,14 +729,14 @@ input[type="range"]:focus::-moz-range-thumb {
 
     body {
         background-color: #f3efea;
-        background:url("./assets/bg.png");
+        background:url(https://raw.githubusercontent.com/LnDataTech/data-xmas-quiz/refs/heads/main/assets/bg_c.png);
         background-size:cover;
         background-position: center;
         background-repeat:space;
     }
     
     .wrap {
-        background:url("./assets/bg.png");
+        background:url(https://raw.githubusercontent.com/LnDataTech/data-xmas-quiz/refs/heads/main/assets/bg_c.png);
         background-size: cover;
         max-height: 100%;
         width: 100%;
