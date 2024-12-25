@@ -318,14 +318,16 @@ const sendTo = () => {
                     <div class="modal-content">
                         <span class="close-button" onclick="closeModal()">&times;</span>
                         <h3>分享給別人來玩</h3>
-                        <a href="#" class="social-share-button" data-platform="line">
+                        <a href="https://social-plugins.line.me/lineit/share?url=https://lndatatech.github.io/data-xmas-quiz/" target="_blank" class="social-share-button" data-platform="line">
                             <i class="fab fa-line"></i>  LINE  </a>
-                        <a href="#" class="social-share-button" data-platform="facebook">
+                        <a href="https://www.facebook.com/sharer.php?u=https://lndatatech.github.io/data-xmas-quiz/" target="_blank" class="social-share-button" data-platform="facebook">
                             <i class="fab fa-facebook"></i>  Facebook  </a>
-                        <a href="#" class="social-share-button" data-platform="twitter">
+                        <a href="https://twitter.com/intent/tweet?text=超好玩的心理測驗&url=https://lndatatech.github.io/data-xmas-quiz/&via=LnData_Official" target="_blank" class="social-share-button" data-platform="twitter">
                             <i class="fab fa-twitter"></i>  Twitter  </a>
-                        <a href="#" class="social-share-button" data-platform="whatsapp">
+                        <a href="https://wa.me/?text=%E6%88%91%E5%9C%A8%E8%81%96%E8%AA%95%E7%AF%80%E7%8E%A9%E4%BA%86%E4%B8%80%E5%80%8B%E6%9C%89%E8%B6%A3%E7%9A%84%E6%B8%AC%E9%A9%97%EF%BC%8C%E4%BD%A0%E4%B9%9F%E4%BE%86%E8%A9%A6%E8%A9%A6%E7%9C%8B%EF%BC%81https://lndatatech.github.io/data-xmas-quiz/" target="_blank" class="social-share-button" data-platform="whatsapp">
                             <i class="fab fa-whatsapp"></i>  WhatsApp  </a>
+                        <a href="https://www.pinterest.com/pin/create/button/?u=https://lndatatech.github.io/data-xmas-quiz/&media=https://lndatatech.github.io/data-xmas-quiz/assets/bg.png&description=聖誕數據心理測驗" target="_blank" class="social-share-button" data-platform="pinterest">
+                            <i class="fab fa-pinterest"></i>  Pinterest  </a>
                         <button onclick="copyUrl()">
                             <i class="fas fa-link"></i>  複製網址  </button>
                         <button onclick="shareResult()">
@@ -480,3 +482,18 @@ function animate() {
 }
 
 animate();
+
+// 獲取音樂控制按鈕和背景音樂元素
+const musicToggleButton = document.getElementById('music-toggle-button');
+const backgroundMusic = document.getElementById('background-music');
+
+// 新增音樂控制按鈕的點擊事件
+musicToggleButton.addEventListener('click', () => {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    musicToggleButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // 顯示音量開啟 icon
+  } else {
+    backgroundMusic.pause();
+    musicToggleButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // 顯示音量關閉 icon
+  }
+});
