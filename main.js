@@ -308,8 +308,10 @@ const sendTo = () => {
             <img id="image" src="assets/數據${text}.png" alt="你是${text}">
             <div class="disclaimer">測驗結果僅供參考</div>
             <div class="buttons">
-                <p>最後，恭喜你完成任務，聖誕老人依照約定送了一份驚喜禮包給你，趕快打開看看吧！</p>
-                <button class="gift"><a href="#">打開禮物</a></button>
+                <p>
+                    最後，恭喜你完成任務，聖誕老人依照約定送了一份驚喜禮包給你，趕快打開看看吧！歡迎你再多測試幾次，或是分享給朋友一起來玩喔！
+                </p>
+                <button class="gift"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdx-fXbe8DhSQQh4fa44UgMkWThh0iH-qGb3wzOwLZrsrJCtQ/viewform?usp=header">打開禮物</a></button>
             </div>
             <div class="buttons">
                 <button onclick="location.reload()"><i class="fas fa-redo"></i>  再玩一次  </button>
