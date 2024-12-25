@@ -54,7 +54,7 @@ const questions = {
         "優化禮物生產和派送",
         "分析聖誕活動的參與度",
         "提升顧客的聖誕購物體驗", 15],
-    "你說，這趟旅程中其實恨是很多新朋友，並且你對…印象最深": [
+    "你說，這趟旅程中其實認識很多新朋友，並且你對…印象最深": [
         "機智勇敢的魔法黑貓",
         "善良貼心的雪花精靈",
         "熱情活潑的糖果仙子",
@@ -74,7 +74,7 @@ const questions = {
         "根據天氣狀況，靈活調整飛行路線",
         "測試馴鹿的能力，例如飛行速度、耐力、特殊魔法等行",
         "相信馴鹿的經驗，讓牠們帶路與判斷。", 11],
-    "聖誕老人希望你能幫忙優化禮物派送路線，你會怎麼做？": [
+    "聖誕老人希望你能幫忙優化禮物派送路線，你會先怎麼做？": [
         "分析各地區的禮物需求量和距離",
         "研究並考慮交通工具的承載量和速度",
         "設計最佳的派送路線，節省時間和成本",
@@ -311,7 +311,7 @@ const sendTo = () => {
                 <p>
                     最後，恭喜你完成任務，聖誕老人依照約定送了一份驚喜禮包給你，趕快打開看看吧！歡迎你再多測試幾次，或是分享給朋友一起來玩喔！
                 </p>
-                <button class="gift"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdx-fXbe8DhSQQh4fa44UgMkWThh0iH-qGb3wzOwLZrsrJCtQ/viewform?usp=header">打開禮物</a></button>
+                <button class="gift" onclick="openGiftLink()"><a id="gift-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdx-fXbe8DhSQQh4fa44UgMkWThh0iH-qGb3wzOwLZrsrJCtQ/viewform?usp=header" target="_blank">打開禮物</a></button>
             </div>
             <div class="buttons">
                 <button onclick="location.reload()"><i class="fas fa-redo"></i>  再玩一次  </button>
@@ -499,3 +499,7 @@ musicToggleButton.addEventListener('click', () => {
     musicToggleButton.innerHTML = '<i class="fas fa-volume-mute"></i>'; // 顯示音量關閉 icon
   }
 });
+
+function openGiftLink() {
+    document.getElementById('gift-link').click();
+  }
